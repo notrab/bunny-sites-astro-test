@@ -26,6 +26,8 @@ jobs:
       - run: npm run build
 
       - uses: BunnyWay/actions/deploy-site@deploy-site_0.1.0
+        env:
+          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
         with:
           site: "my-simple-site"
           directory: "dist"
